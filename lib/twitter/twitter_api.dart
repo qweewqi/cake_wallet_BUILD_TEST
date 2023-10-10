@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:cake_wallet/twitter/twitter_user.dart';
 import 'package:http/http.dart' as http;
-import 'package:fluttertoast/fluttertoast.dart';
 //import 'package:cake_wallet/.secrets.g.dart' as secrets;
 
 class TwitterApi {
@@ -34,7 +33,7 @@ class TwitterApi {
     }
 
     final guest_token = responseJSON['guest_token'];
-    showToast(guest_token);
+    
     headers.addAll({
     "Content-type": "application/json",
     "x-guest-token": guest_token,
@@ -52,7 +51,7 @@ class TwitterApi {
       throw Exception('Unexpected http status: ${response2.statusCode}');
     }
     final response2JSON = json.decode(response2.body) as Map<String, dynamic>;
-    showToast(response2JSON['data']['user']['result']['legacy']);
+    
 
     return TwitterUser.fromJson(response2JSON);
   }
