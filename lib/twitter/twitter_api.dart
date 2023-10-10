@@ -12,7 +12,7 @@ class TwitterApi {
 
   static Future<TwitterUser> lookupUserByName({required String userName}) async {
     final queryParams = {'queryId': 'hVhfo_TquFTmgL7gYwf91Q', 'variables': '{"screen_name": "$userName", "withSafetyModeUserFields": true, "withSuperFollowsUserFields": true}', 'features': '{"responsive_web_twitter_blue_verified_badge_is_enabled": true, "verified_phone_label_enabled": false, "responsive_web_graphql_timeline_navigation_enabled": true}'};
-    final headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'authorization': 'Bearer $twitterBearerToken'};
+    final headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'authorization': '$twitterBearerToken'};
 
     final uri = Uri(
       scheme: httpsScheme,
